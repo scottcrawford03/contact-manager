@@ -20,7 +20,8 @@
 
 <ul>
   <% @person.email_addresses.each do |email| %>
-    <li><%= email.address %></li>
+    <li><%= email.address %>
+        <%= link_to('new email address', new_email_address_path) %></li>
   <% end %>
 </ul>
 
