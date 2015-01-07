@@ -60,7 +60,7 @@ RSpec.describe EmailAddressesController, :type => :controller do
 
       it "redirects to the created email_address" do
         post :create, {:email_address => valid_attributes}, valid_session
-        expect(response).to redirect_to(EmailAddress.last)
+        expect(response).to redirect_to(bob)
       end
     end
 
