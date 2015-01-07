@@ -20,7 +20,9 @@
 
 <ul>
   <% @person.email_addresses.each do |email| %>
-    <li><%= email.address %></li>
+    <li><%= email.address %>
+        <%= link_to('delete', email_address_path(email), :method => 'delete') %> |
+        <%= link_to('edit', edit_email_address_path(email)) %></li>
   <% end %>
 </ul>
 
