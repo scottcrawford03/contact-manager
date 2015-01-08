@@ -1,5 +1,5 @@
 class PhoneNumbersController < ApplicationController
-  before_action :set_phone_number, only: [:show, :edit, :update, :destroy]
+  before_action :find_resource, only: [:show, :edit, :update, :destroy]
 
   def new
     @phone_number = PhoneNumber.new(contact_id: params[:contact_id],
