@@ -3,6 +3,10 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+
+ActiveRecord::Base.logger.level = Logger::INFO
+ActionController::Base.logger.level = Logger::ERROR
+Rails.logger.level = Logger::ERROR
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
