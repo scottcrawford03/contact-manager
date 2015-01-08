@@ -1,29 +1,14 @@
 class PhoneNumbersController < ApplicationController
   before_action :set_phone_number, only: [:show, :edit, :update, :destroy]
 
-  # GET /phone_numbers
-  # GET /phone_numbers.json
-  def index
-    @phone_numbers = PhoneNumber.all
-  end
-
-  # GET /phone_numbers/1
-  # GET /phone_numbers/1.json
-  def show
-  end
-
-  # GET /phone_numbers/new
   def new
     @phone_number = PhoneNumber.new(contact_id: params[:contact_id],
                                     contact_type: params[:contact_type])
   end
 
-  # GET /phone_numbers/1/edit
   def edit
   end
 
-  # POST /phone_numbers
-  # POST /phone_numbers.json
   def create
     @phone_number = PhoneNumber.new(phone_number_params)
 
