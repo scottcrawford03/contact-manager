@@ -4,11 +4,11 @@ RSpec.describe EmailAddressesController, :type => :controller do
   let(:bob) {Person.create(first_name: 'Bob', last_name: 'Dole') }
 
   let(:valid_attributes) {
-    {address: 'hello@example.com', person_id: bob.id}
+    {address: 'hello@example.com', contact_id: bob.id, contact_type: 'Person'}
   }
 
   let(:invalid_attributes) {
-    { address: nil, person_id: nil}
+    { address: nil, contact_id: nil, contact_type: nil}
   }
 
   let(:valid_session) { {} }
@@ -80,7 +80,7 @@ RSpec.describe EmailAddressesController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        { address: 'goodbye@example.com', person_id: bob.id }
+        { address: 'goodbye@example.com', contact_id: bob.id, contact_type: 'Person' }
       }
 
       it "updates the requested email_address" do

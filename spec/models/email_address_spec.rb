@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe EmailAddress, :type => :model do
   let(:email_address) do
-     EmailAddress.new(address: 'hello@example.com')
+     EmailAddress.new(address: 'hello@example.com',
+                      contact_id: 1,
+                      contact_type: 'Person')
   end
 
   it 'is valid' do
