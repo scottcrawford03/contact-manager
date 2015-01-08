@@ -6,19 +6,11 @@
 </p>
 
 <ul>
-  <% @company.phone_numbers.each do |phone| %>
-  <li><%= phone.number %>
-    <%= link_to('edit', edit_phone_number_path(phone)) %> |
-    <%= link_to('delete', phone_number_path(phone), :method => 'delete') %></li>
-    <% end %>
+  <%= render 'phone_numbers/phone_numbers', :phone_numbers => @company.phone_numbers %>
 </ul>
 
 <ul>
-  <% @company.email_addresses.each do |email| %>
-  <li><%= email.address %>
-    <%= link_to('delete', email_address_path(email), :method => 'delete') %> |
-    <%= link_to('edit', edit_email_address_path(email)) %></li>
-    <% end %>
+  <%= render 'email_addresses/email_addresses', :email_addresses => @company.email_addresses %>
 </ul>
 
 <%= link_to('new email address', new_email_address_path(contact_id: @company.id, contact_type: 'Company')) %> |
